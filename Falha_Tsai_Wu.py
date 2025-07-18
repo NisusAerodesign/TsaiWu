@@ -53,7 +53,7 @@ class Tsai_Wu:
         self.F12 = 4*np.sqrt(self.F66) - (2*self.F1*np.sqrt(self.F66) + 2*self.F2*np.sqrt(self.F66) + self.F11 +self.F22 + self.F66)
         self.F13 = 4*np.sqrt(self.F55) - (2*self.F1*np.sqrt(self.F55) + 2*self.F3*np.sqrt(self.F55) + self.F11 +self.F33 + self.F55)
         self.F23 = 4*np.sqrt(self.F44) - (2*self.F2*np.sqrt(self.F44) + 2*self.F3*np.sqrt(self.F44) + self.F22 +self.F33 + self.F44)
-        #self.F12 = self.F13 = self.F23 = -1 parece ser o utilizado pelo ansys, mas é estranho pela teoria
+        #self.F12 = self.F13 = self.F23 = -1 #parece ser o utilizado pelo ansys, mas é estranho pela teoria
     
     def criterio(self, x = 0, y = 0, z = 0, xy = 0, xz = 0, yz = 0):
         """
@@ -132,3 +132,4 @@ def tensao(h, b, t, MF, MTp, FC, MTt):
 if __name__ == '__main__':
     Tsai = Tsai_Wu(4.206e8, 5.629e8, 1.444e8, 4.938e7, 4.81e7, 2.203e6)
     Tsai.criterio(*tensao(20e-3, 2e-3, 1.2e-3, 100000e-3, 0, -1000, 0))
+    #Tsai.criterio(55.55e6,55.55e6,0,0,0,0) verificar
